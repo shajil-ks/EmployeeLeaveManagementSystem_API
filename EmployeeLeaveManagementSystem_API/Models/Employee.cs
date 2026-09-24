@@ -33,7 +33,7 @@ namespace EmployeeLeaveManagementSystem_API.Models
 
         // Link to Depertment
         public int? DepartmentId { get; set; }
-        public Department? department { get; set; }
+        public Department? Department { get; set; }
 
 
         //Self referencing
@@ -45,6 +45,7 @@ namespace EmployeeLeaveManagementSystem_API.Models
 
         public ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
         public ICollection<LeaveRequest> LeaveRequests { get; set; } = new List<LeaveRequest>();
+        public ICollection<LeaveRequest> ApprovedLeaveRequests { get; set; } = new List<LeaveRequest>();
 
     }
 }
