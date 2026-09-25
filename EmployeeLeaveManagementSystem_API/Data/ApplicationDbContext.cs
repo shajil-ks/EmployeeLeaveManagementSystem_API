@@ -65,7 +65,7 @@ namespace EmployeeLeaveManagementSystem_API.Data
 
             //LeaveRequest-Employee(approver)
             builder.Entity<LeaveRequest>()
-                .HasOne(l => l.Employee)
+                .HasOne(l => l.ApprovedByEmployee)
                 .WithMany(e =>e.ApprovedLeaveRequests)
                 .HasForeignKey(l => l.ApprovedByEmployeeId)
                 .OnDelete(DeleteBehavior.Restrict);

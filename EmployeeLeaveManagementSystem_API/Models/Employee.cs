@@ -45,7 +45,10 @@ namespace EmployeeLeaveManagementSystem_API.Models
 
         public ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
         public ICollection<LeaveRequest> LeaveRequests { get; set; } = new List<LeaveRequest>();
-        public ICollection<LeaveRequest> ApprovedLeaveRequests { get; set; } = new List<LeaveRequest>();
+
+        public ICollection<LeaveRequest> ApprovedLeaveRequests { get; set; }=new List<LeaveRequest>();
+
+
 
     }
 }

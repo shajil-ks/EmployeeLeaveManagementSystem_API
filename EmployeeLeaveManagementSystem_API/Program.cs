@@ -1,6 +1,17 @@
+using EmployeeLeaveManagementSystem_API.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+#region Configure Database
+
+var connectionstring = builder.Configuration.GetConnectionString("DfaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionstring));
+
+#endregion
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
